@@ -2,3 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+
+@font-face {
+	font-family: 'Podkova';
+    src: url('/fonts/Podkova/Podkova-VariableFont_wght.ttf');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Mate';
+    src: url('/fonts/Mate/Mate-Regular.ttf');
+	font-display: swap;
+}
+
+:root [data-theme='basic'] {
+    --theme-font-family-base: 'Mate', sans-serif;
+    --theme-font-family-heading: 'Podkova', sans-serif;
+    /* ... */
+}

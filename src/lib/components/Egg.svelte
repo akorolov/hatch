@@ -4,7 +4,7 @@
 
     const { triggerAnimation, animationAction } = createAnimationTriggerAction()
 
-    export let image_src = "/assets/Fantasy_Eggs/images/03.png"
+    export let image_src = "/assets/Fantasy_Eggs/images/01.png"
     export let count = 0
 
     let canvas_element: HTMLCanvasElement

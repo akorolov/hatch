@@ -42,6 +42,8 @@
   "type": "module",
   "dependencies": {
     "@floating-ui/dom": "1.6.5",
-    "excalibur": "^0.29.3"
+    "excalibur": "^0.29.3",
+    "svelte-persisted-store": "^0.11.0",
+    "svelte-trigger-action": "^1.17.0"
   }
 }

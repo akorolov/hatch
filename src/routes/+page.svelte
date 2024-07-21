@@ -1,5 +1,6 @@
 <script>
-	import Test from "$lib/components/test.svelte";
+	import Egg from "$lib/components/Egg.svelte";
+
 
 </script>
 
@@ -7,8 +8,6 @@
 
 Main page here
 
-<br><br>
-
-<Test />
+<Egg />
 
 </div>

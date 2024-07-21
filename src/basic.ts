@@ -9,8 +9,8 @@ export const basic: CustomThemeConfig = {
 		"--theme-font-family-heading": `system-ui`,
 		"--theme-font-color-base": "0 0 0",
 		"--theme-font-color-dark": "255 255 255",
-		"--theme-rounded-base": "2px",
-		"--theme-rounded-container": "2px",
+		"--theme-rounded-base": "9999px",
+		"--theme-rounded-container": "8px",
 		"--theme-border-base": "1px",
 		// =~= Theme On-X Colors =~=
 		"--on-primary": "var(--color-surface-50)",
@@ -87,17 +87,17 @@ export const basic: CustomThemeConfig = {
 		"--color-error-700": "146 63 53", // #923f35
 		"--color-error-800": "116 50 43", // #74322b
 		"--color-error-900": "95 41 35", // #5f2923
-		// surface | #ddd1c0 
-		"--color-surface-50": "255 255 255", // #faf8f6
-		"--color-surface-100": "253 251 249", // #f8f6f2
-		"--color-surface-200": "249 247 245", // #f7f4ef
-		"--color-surface-300": "231 229 227", // #f1ede6
-		"--color-surface-400": "211 209 207", // #e7dfd3
-		"--color-surface-500": "181 179 177", // #ddd1c0
-		"--color-surface-600": "141 139 137", // #c7bcad
-		"--color-surface-700": "121 119 117", // #a69d90
-		"--color-surface-800": "91 89 87", // #857d73
-		"--color-surface-900": "81 79 77", // #6c665e
+		// surface | #F7E7CE 
+		"--color-surface-50": "254 251 248", // #fefbf8
+		"--color-surface-100": "253 250 245", // #fdfaf5
+		"--color-surface-200": "253 249 243", // #fdf9f3
+		"--color-surface-300": "252 245 235", // #fcf5eb
+		"--color-surface-400": "249 238 221", // #f9eedd
+		"--color-surface-500": "247 231 206", // #F7E7CE
+		"--color-surface-600": "222 208 185", // #ded0b9
+		"--color-surface-700": "185 173 155", // #b9ad9b
+		"--color-surface-800": "148 139 124", // #948b7c
+		"--color-surface-900": "121 113 101", // #797165
 		
 	}
 }

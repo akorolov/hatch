@@ -1,8 +1,8 @@
 <script lang="ts">
 
-import { TabGroup, Tab, TabAnchor } from '@skeletonlabs/skeleton';
-import { page } from '$app/stores';
-import { unlocked_tabs } from '$lib/stores/status';
+	import { TabGroup, Tab, TabAnchor } from '@skeletonlabs/skeleton';
+	import { page } from '$app/stores';
+	import { unlocked_tabs } from '$lib/stores/status';
 	import { ClearStores } from '$lib/stores/settings';
 
 
@@ -13,9 +13,13 @@ import { unlocked_tabs } from '$lib/stores/status';
 	<h1 class="h1">Hatch the Egg</h1> 
 
 	<TabGroup padding="px-3 py-1" hover="hover:variant-soft-secondary">
-		<TabAnchor href="/" selected={$page.url.pathname === '/'}>Home</TabAnchor>
-		<TabAnchor href="/test1" selected={$page.url.pathname === '/test1'}>Test1</TabAnchor>
-		<button on:click={ClearStores} class="btn">Clear stores</button>
+		{#if $unlocked_tabs.length > 0}
+			<TabAnchor href="/" selected={$page.url.pathname === '/'}>Eggs</TabAnchor>
+		{/if}
+		{#if $unlocked_tabs.includes("test1")}
+			<TabAnchor href="/test1" selected={$page.url.pathname === '/test1'}>Test1</TabAnchor>
+		{/if}
+		<button on:click={ClearStores}>Clear stores</button>
 	</TabGroup>
 						
 </div>

@@ -8,13 +8,11 @@
 
 <div class="m-4 flex flex-row gap-2">
 
-	{#key $unlocked_eggs}
-		{#if $unlocked_eggs.includes("hatcher1")}
-			<Hatcher1 />
-		{/if}
-		{#if $unlocked_eggs.includes("hatcher2")}
-			<Hatcher2 />
-		{/if}
-	{/key}
+	{#if $unlocked_eggs.includes("hatcher1")}
+		<Hatcher1 />
+	{/if}
+	{#if $unlocked_eggs.includes("hatcher2")}
+		<Hatcher2 />
+	{/if}
 
 </div>

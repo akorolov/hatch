@@ -7,11 +7,6 @@
     import { hatcher2 } from "$lib/stores/eggs";
 	import { onMount } from "svelte";
 
-    onMount(() => {
-        // Really not sure why this is necessary, but it was initialized with the hatcher1 count. 
-        $hatcher2.counter = 0
-    })
-
 
 </script>
 

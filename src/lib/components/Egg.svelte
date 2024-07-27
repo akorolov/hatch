@@ -18,7 +18,7 @@
     })
 
 
-    export let shake: "hard" | "normal" | "soft" = "soft"
+    export let shake: "hard" | "normal" | "soft" | "none" = "soft"
 
     function ClickEgg() {
         switch (shake) {
@@ -27,6 +27,9 @@
                 break;
             case "soft":
                 triggerAnimation('soft_shake')
+                break;
+            case "none":
+                break;
             default:
                 triggerAnimation('shake')
                 break;

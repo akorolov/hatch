@@ -41,7 +41,7 @@
 
     {#if $hatcher1.counter > 0 && $hatcher1.counter < 10}
         {#key $hatcher1.counter}
-            Count: {$hatcher1.counter}
+            {$hatcher1.counter}
         {/key}
     {/if}
     {#if $hatcher1.hatched}

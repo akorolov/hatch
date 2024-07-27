@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Egg from "$lib/components/Egg.svelte";
-	import Creature from "$lib/components/Creature.svelte";
+	import Bird from "$lib/components/Bird.svelte";
     import type { ToastSettings } from '@skeletonlabs/skeleton';
     import { getToastStore } from '@skeletonlabs/skeleton';
     import { fade } from "svelte/transition";
@@ -35,7 +35,7 @@
         {#if $hatcher1.counter < 10}
             <span transition:fade={{ duration: 1000 }}><Egg bind:count={$hatcher1.counter} shake="normal" image_src="/assets/Fantasy_Eggs/images/01.png" /></span>
         {:else}
-            <span transition:fade={{ duration: 1000 }}><Creature /></span>
+            <span transition:fade={{ duration: 1000 }}><Bird /></span>
         {/if}
     </div>
 

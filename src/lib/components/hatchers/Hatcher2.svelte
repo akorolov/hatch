@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Egg from "$lib/components/Egg.svelte";
-	import Creature from "$lib/components/Creature.svelte";
+	import Bird from "$lib/components/Bird.svelte";
     import type { ToastSettings } from '@skeletonlabs/skeleton';
     import { getToastStore } from '@skeletonlabs/skeleton';
     import { fade } from "svelte/transition";
@@ -48,7 +48,7 @@
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <span transition:fade={{ duration: 1000 }} on:click={() => {console.log("click egg 2")}} on:mousedown={StartHold} on:mouseup={EndHold} ><Egg bind:count={$hatcher2.counter} shake="none" image_src="/assets/Fantasy_Eggs/images/02.png" /></span>
         {:else if $hatcher2.hatched}
-            <span transition:fade={{ duration: 1000 }}><Creature image_src="/assets/birds/spritesheet_cardinal.png" /></span> 
+            <span transition:fade={{ duration: 1000 }}><Bird image_src="/assets/birds/spritesheet_cardinal.png" /></span> 
         {/if}
     </div>
 

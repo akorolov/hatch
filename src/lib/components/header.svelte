@@ -16,9 +16,11 @@
 		{#if $unlocked_tabs.length > 0}
 			<TabAnchor href="/" selected={$page.url.pathname === '/'}>Eggs</TabAnchor>
 		{/if}
-		{#if $unlocked_tabs.includes("test1")}
-			<TabAnchor href="/test1" selected={$page.url.pathname === '/test1'}>Test1</TabAnchor>
+		{#if $unlocked_tabs.includes("stats")}
+			<TabAnchor href="/stats" selected={$page.url.pathname === '/stats'}>Stats</TabAnchor>
 		{/if}
+
+		<TabAnchor href="/test1" selected={$page.url.pathname === '/test1'}>Test1</TabAnchor>
 		<button on:click={ClearStores}>Clear stores</button>
 	</TabGroup>
 						

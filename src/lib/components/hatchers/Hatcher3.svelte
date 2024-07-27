@@ -4,37 +4,39 @@
     import type { ToastSettings } from '@skeletonlabs/skeleton';
     import { getToastStore } from '@skeletonlabs/skeleton';
     import { fade } from "svelte/transition";
-    import { hatcher2, unlocked_eggs } from "$lib/stores/eggs";
+    import { hatcher3, unlocked_eggs } from "$lib/stores/eggs";
 	import { onMount } from "svelte";
 
     const toastStore = getToastStore();
     const t: ToastSettings = {
-        message: 'Cardinal has hatched!',
+        message: 'Cedar Waxwing has hatched!',
         background: 'variant-soft-primary',
         timeout: 5000,
         hoverable: true
     };
 
     let timeout: NodeJS.Timeout | undefined
-    let hold = false
+    let seconds = 0
 
-    $hatcher2.counter = -1
+    $hatcher3.counter = -1
 
     function StartHold() {
-        if (!$hatcher2.hatched) {
-            hold = true
-            timeout = setInterval(() => {console.log("interval trigger"); $hatcher2.counter += 1}, 1000)
+        if (!$hatcher3.hatched) {
+            timeout = setInterval(() => {console.log("interval trigger"); seconds += 1}, 100)
         }
     }
 
-    function EndHold() {
-        hold = false
-        clearInterval(timeout)
-        $hatcher2.counter = -1
+    $: if (seconds == 11) {
+        $hatcher3.counter += 1
     }
 
-    $: if (!$hatcher2.hatched && $hatcher2.counter == 10) {
-        $hatcher2.hatched = true
+    function EndHold() {
+        clearInterval(timeout)
+        seconds = 0
+    }
+
+    $: if (!$hatcher3.hatched && $hatcher3.counter == 10) {
+        $hatcher3.hatched = true
         toastStore.trigger(t)
         clearInterval(timeout)
         $unlocked_eggs = [...$unlocked_eggs, "hatcher3"]
@@ -44,22 +46,22 @@
 
 <div class="flex flex-col gap-2 m-2 items-center">
     <div class="container w-auto">
-        {#if (!$hatcher2.hatched)}
+        {#if (!$hatcher3.hatched)}
         <!-- svelte-ignore a11y-no-static-element-interactions -->
             <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <span transition:fade={{ duration: 1000 }} on:click={() => {console.log("click egg 2")}} on:mousedown={StartHold} on:mouseup={EndHold} ><Egg bind:count={$hatcher2.counter} shake="none" image_src="/assets/Fantasy_Eggs/images/02.png" basic_clicker={false} /></span>
-        {:else if $hatcher2.hatched}
-            <span transition:fade={{ duration: 1000 }}><Bird image_src="/assets/birds/spritesheet_cardinal.png" /></span> 
+            <span transition:fade={{ duration: 1000 }} on:mousedown={StartHold} on:mouseup={EndHold} ><Egg bind:count={$hatcher3.counter} shake="none" image_src="/assets/Fantasy_Eggs/images/03.png" basic_clicker={false} /></span>
+        {:else if $hatcher3.hatched}
+            <span transition:fade={{ duration: 1000 }}><Bird image_src="/assets/birds/spritesheet_cedar waxwing.png" /></span> 
         {/if}
     </div>
 
-    {#if $hatcher2.counter >= 0 && !$hatcher2.hatched}
-        {#key $hatcher2.counter}
-            {$hatcher2.counter}
+    {#if $hatcher3.counter >= 0 && !$hatcher3.hatched}
+        {#key $hatcher3.counter}
+            {$hatcher3.counter}
         {/key}
     {/if} 
-    {#if $hatcher2.hatched}
-        Cardinal
+    {#if $hatcher3.hatched}
+        <center>Cedar<br>Waxwing</center>
     {/if}
 
 </div>

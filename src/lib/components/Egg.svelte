@@ -6,6 +6,7 @@
 
     export let image_src = "/assets/Fantasy_Eggs/images/01.png"
     export let count = 0
+    export let basic_clicker = true
 
     let canvas_element: HTMLCanvasElement
 
@@ -34,9 +35,7 @@
                 triggerAnimation('shake')
                 break;
         }
-        
-        count+=1
-        console.log(count)
+        if (basic_clicker) count+=1;
     }
 
 

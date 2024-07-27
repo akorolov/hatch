@@ -22,7 +22,7 @@
         $unlocked_eggs = [...$unlocked_eggs, "hatcher2"]
         $hatcher1.hatched = true
         console.log($unlocked_eggs)
-        $unlocked_tabs = [...$unlocked_tabs, "test1"]
+        $unlocked_tabs = [...$unlocked_tabs, "stats"]
     }
 
     $: $hatcher1.counter, ($hatcher1.counter == 10) ? Hatch() : null;

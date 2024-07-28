@@ -5,7 +5,7 @@
     import { getToastStore } from '@skeletonlabs/skeleton';
     import { fade } from "svelte/transition";
     import { hatcher3, LoveLevel, unlocked_eggs } from "$lib/stores/eggs";
-	import { onMount } from "svelte";
+	import { unlocked_tabs } from "$lib/stores/status";
 
     const toastStore = getToastStore();
     const t: ToastSettings = {
@@ -40,6 +40,7 @@
         toastStore.trigger(t)
         clearInterval(timeout)
         $unlocked_eggs = [...$unlocked_eggs, "hatcher3"]
+        $unlocked_tabs = [...$unlocked_tabs, "map"]
     }
 
 </script>

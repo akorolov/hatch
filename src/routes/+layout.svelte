@@ -10,7 +10,7 @@
 	import Sidebar from '$lib/components/sidebar.svelte';
 	import { sidebar_on } from '$lib/stores/status';
 	import Header from '$lib/components/header.svelte';
-	import { initializeStores, Toast } from '@skeletonlabs/skeleton';
+	import { initializeStores, Toast, Modal } from '@skeletonlabs/skeleton';
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import { hatcher1, hatcher2, hatcher3, unlocked_eggs } from '$lib/stores/eggs';
@@ -74,6 +74,7 @@
 </script>
 
 <Toast position="br" max={5} transitionOut={fade} shadow="" />
+<Modal />
 
 <div class="flex flex-col gap-2 border border-black m-2">
 	<Header />

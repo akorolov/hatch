@@ -14,6 +14,12 @@
         timeout: 5000,
         hoverable: true
     };
+    const t2: ToastSettings = {
+        message: 'A wild egg has appeared!',
+        background: 'variant-soft-primary',
+        timeout: 5000,
+        hoverable: true
+    };
 
     let timeout: NodeJS.Timeout | undefined
     let hold = false
@@ -36,6 +42,7 @@
     $: if (!$hatcher2.hatched && $hatcher2.counter == 10) {
         $hatcher2.hatched = true
         toastStore.trigger(t)
+        toastStore.trigger(t2)
         clearInterval(timeout)
         $unlocked_eggs = [...$unlocked_eggs, "hatcher3"]
     }

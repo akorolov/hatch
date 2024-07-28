@@ -15,9 +15,16 @@
         timeout: 5000,
         hoverable: true
     };
+    const t2: ToastSettings = {
+        message: 'Blue Jay has brought you an egg!',
+        background: 'variant-soft-primary',
+        timeout: 5000,
+        hoverable: true
+    };
 
     function Hatch() {
         toastStore.trigger(t)
+        toastStore.trigger(t2)
         $hatcher1.counter += 1
         $unlocked_eggs = [...$unlocked_eggs, "hatcher2"]
         $hatcher1.hatched = true

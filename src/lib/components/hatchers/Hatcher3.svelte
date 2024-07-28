@@ -14,6 +14,12 @@
         timeout: 5000,
         hoverable: true
     };
+    const t2: ToastSettings = {
+        message: 'You found an egg!',
+        background: 'variant-soft-primary',
+        timeout: 5000,
+        hoverable: true
+    };
 
     let timeout: NodeJS.Timeout | undefined
     let seconds = 0
@@ -38,6 +44,7 @@
     $: if (!$hatcher3.hatched && $hatcher3.counter == 10) {
         $hatcher3.hatched = true
         toastStore.trigger(t)
+        toastStore.trigger(t2)
         clearInterval(timeout)
         $unlocked_eggs = [...$unlocked_eggs, "hatcher3"]
         $unlocked_tabs = [...$unlocked_tabs, "map"]

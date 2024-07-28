@@ -6,6 +6,7 @@
     export let image_src = "/assets/birds/spritesheet_blue jay.png"
     export let count = 0
     export let clicker = false
+    export let love = 0
 
 
     let canvas_element: HTMLCanvasElement   
@@ -26,6 +27,7 @@
 
     function FlapWings() {
         LoadBird(32,16)
+        love += 1
         setTimeout(() => {LoadBird(16,16)}, 130 + (Math.random() * 100))
     }
 

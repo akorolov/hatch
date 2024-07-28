@@ -4,7 +4,7 @@
     import type { ToastSettings } from '@skeletonlabs/skeleton';
     import { getToastStore } from '@skeletonlabs/skeleton';
     import { fade } from "svelte/transition";
-    import { hatcher3, unlocked_eggs } from "$lib/stores/eggs";
+    import { hatcher3, LoveLevel, unlocked_eggs } from "$lib/stores/eggs";
 	import { onMount } from "svelte";
 
     const toastStore = getToastStore();
@@ -51,7 +51,7 @@
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <span transition:fade={{ duration: 1000 }} on:mousedown={StartHold} on:mouseup={EndHold} ><Egg bind:count={$hatcher3.counter} shake="none" image_src="/assets/Fantasy_Eggs/images/03.png" basic_clicker={false} /></span>
         {:else if $hatcher3.hatched}
-            <span transition:fade={{ duration: 1000 }}><Bird image_src="/assets/birds/spritesheet_cedar waxwing.png" /></span> 
+            <span transition:fade={{ duration: 1000 }}><Bird bind:love={$hatcher3.love} image_src="/assets/birds/spritesheet_cedar waxwing.png" /></span> 
         {/if}
     </div>
 
@@ -62,6 +62,11 @@
     {/if} 
     {#if $hatcher3.hatched}
         <center>Cedar<br>Waxwing</center>
+    {/if}
+    {#if LoveLevel($hatcher3.love) > 0}
+        <span>
+            Love: {LoveLevel($hatcher3.love)}
+        </span>
     {/if}
 
 </div>

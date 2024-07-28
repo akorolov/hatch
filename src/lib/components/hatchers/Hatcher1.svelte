@@ -4,7 +4,7 @@
     import type { ToastSettings } from '@skeletonlabs/skeleton';
     import { getToastStore } from '@skeletonlabs/skeleton';
     import { fade } from "svelte/transition";
-    import { hatcher1, unlocked_eggs } from "$lib/stores/eggs";
+    import { hatcher1, unlocked_eggs, LoveLevel } from "$lib/stores/eggs";
 	import { unlocked_tabs } from "$lib/stores/status";
 
 
@@ -35,7 +35,7 @@
         {#if $hatcher1.counter < 10}
             <span transition:fade={{ duration: 1000 }}><Egg bind:count={$hatcher1.counter} shake="normal" image_src="/assets/Fantasy_Eggs/images/01.png" /></span>
         {:else}
-            <span transition:fade={{ duration: 1000 }}><Bird /></span>
+            <span transition:fade={{ duration: 1000 }}><Bird bind:love={$hatcher1.love} /></span>
         {/if}
     </div>
 
@@ -45,7 +45,12 @@
         {/key}
     {/if}
     {#if $hatcher1.hatched}
-        Blue Jay
+        <span>Blue Jay</span>
+    {/if}
+    {#if LoveLevel($hatcher1.love) > 0}
+        <span>
+            Love: {LoveLevel($hatcher1.love)}
+        </span>
     {/if}
 </div>
 

@@ -36,7 +36,7 @@
     function EndHold() {
         hold = false
         clearInterval(timeout)
-        $hatcher2.counter = -1
+        $hatcher2.counter = 0
     }
 
     $: if (!$hatcher2.hatched && $hatcher2.counter == 10) {

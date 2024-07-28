@@ -46,7 +46,7 @@
         toastStore.trigger(t)
         toastStore.trigger(t2)
         clearInterval(timeout)
-        $unlocked_eggs = [...$unlocked_eggs, "hatcher3"]
+        $unlocked_eggs = [...$unlocked_eggs, "hatcher4"]
         $unlocked_tabs = [...$unlocked_tabs, "map"]
     }
 

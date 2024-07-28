@@ -3,6 +3,8 @@
 	import Hatcher1 from "$lib/components/hatchers/Hatcher1.svelte";
 	import Hatcher2 from "$lib/components/hatchers/Hatcher2.svelte";
 	import Hatcher3 from "$lib/components/hatchers/Hatcher3.svelte";
+	import Hatcher4 from "$lib/components/hatchers/Hatcher4.svelte";
+	import Hatcher5 from "$lib/components/hatchers/Hatcher5.svelte";
 
 
 </script>
@@ -17,6 +19,12 @@
 	{/if}
 	{#if $unlocked_eggs.includes("hatcher3")}
 		<Hatcher3 />
+	{/if}
+	{#if $unlocked_eggs.includes("hatcher4")}
+		<Hatcher4 />
+	{/if}
+	{#if $unlocked_eggs.includes("hatcher5")}
+		<Hatcher5 />
 	{/if}
 
 </div>

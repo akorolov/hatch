@@ -15,7 +15,7 @@ const default_hatcher: HatcherInfo = {
 }
 
 export function LoveLevel(love: number) {
-    let level = Math.floor(love**(1/2))
+    let level = Math.floor(love**(1/2)) - 2
     return level
 }
 

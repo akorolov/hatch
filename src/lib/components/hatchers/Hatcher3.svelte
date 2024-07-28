@@ -7,6 +7,8 @@
     import { hatcher3, LoveLevel, unlocked_eggs } from "$lib/stores/eggs";
 	import { unlocked_tabs } from "$lib/stores/status";
 
+    $hatcher3.name = "Cedar Waxwing"
+
     const toastStore = getToastStore();
     const t: ToastSettings = {
         message: 'Cedar Waxwing has hatched!',
@@ -23,8 +25,6 @@
 
     let timeout: NodeJS.Timeout | undefined
     let seconds = 0
-
-    $hatcher3.counter = -1
 
     function StartHold() {
         if (!$hatcher3.hatched) {
@@ -52,8 +52,8 @@
 
 </script>
 
-<div class="flex flex-col gap-2 m-2 items-center">
-    <div class="container w-auto">
+<div class="flex flex-col gap-0 m-2 items-center">
+    <div class="container w-auto mb-2">
         {#if (!$hatcher3.hatched)}
         <!-- svelte-ignore a11y-no-static-element-interactions -->
             <!-- svelte-ignore a11y-click-events-have-key-events -->

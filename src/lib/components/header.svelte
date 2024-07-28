@@ -13,9 +13,13 @@
 <div class="flex flex-col items-center gap-2 m-2"> 
 		<span><h1 class="h1">Hatch the Egg</h1> </span>
 		
-	
+	{#if $gold_earned > 0}
+	<div class="flex flex-row items-center gap-2">
+		<span>Gold: {$gold_earned - $gold_spent}</span>
+	</div>
+	{/if}
 
-	<TabGroup padding="px-3 py-1" hover="hover:variant-soft-secondary">
+	<TabGroup padding="px-3" hover="hover:variant-soft-secondary">
 		{#if $unlocked_tabs.length > 0}
 			<TabAnchor href="/" selected={$page.url.pathname === '/'}>Eggs</TabAnchor>
 		{/if}
@@ -29,8 +33,6 @@
 		<TabAnchor href="/test1" selected={$page.url.pathname === '/test1'}>Test1</TabAnchor>
 		<button on:click={ClearStores}>Clear stores</button>
 
-		<span class="mx-24">Gold: {$gold_earned - $gold_spent}</span>
-		
 	</TabGroup>
 	
 						

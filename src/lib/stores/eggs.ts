@@ -4,12 +4,14 @@ type HatcherInfo = {
     counter: number,
     hatched: boolean,
     love: number,
+    name: string,
 }
 
 const default_hatcher: HatcherInfo = {
     counter: 0,
     hatched: false,
     love: 0,
+    name: "Bird"
 }
 
 export function LoveLevel(love: number) {

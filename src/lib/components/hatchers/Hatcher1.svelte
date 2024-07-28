@@ -7,6 +7,7 @@
     import { hatcher1, unlocked_eggs, LoveLevel } from "$lib/stores/eggs";
 	import { unlocked_tabs } from "$lib/stores/status";
 
+    $hatcher1.name = "Blue Jay"
 
     const toastStore = getToastStore();
     const t: ToastSettings = {
@@ -37,8 +38,8 @@
 
 </script>
 
-<div class="flex flex-col gap-2 m-2 items-center">
-    <div class="container w-auto">
+<div class="flex flex-col gap-0 m-2 items-center">
+    <div class="container w-auto mb-2">
         {#if $hatcher1.counter < 10}
             <span transition:fade={{ duration: 1000 }}><Egg bind:count={$hatcher1.counter} shake="normal" image_src="/assets/Fantasy_Eggs/images/01.png" /></span>
         {:else}

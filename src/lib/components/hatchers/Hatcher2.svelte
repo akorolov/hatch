@@ -1,11 +1,13 @@
 <script lang="ts">
 	import Egg from "$lib/components/Egg.svelte";
 	import Bird from "$lib/components/Bird.svelte";
-    import type { ToastSettings } from '@skeletonlabs/skeleton';
-    import { getToastStore } from '@skeletonlabs/skeleton';
     import { fade } from "svelte/transition";
     import { hatcher2, LoveLevel, unlocked_eggs } from "$lib/stores/eggs";
 	import { onMount } from "svelte";
+    import type { ToastSettings } from '@skeletonlabs/skeleton';
+    import { getToastStore } from '@skeletonlabs/skeleton';
+
+    $hatcher2.name = "Cardinal"
 
     const toastStore = getToastStore();
     const t: ToastSettings = {
@@ -23,8 +25,6 @@
 
     let timeout: NodeJS.Timeout | undefined
     let hold = false
-
-    $hatcher2.counter = -1
 
     function StartHold() {
         if (!$hatcher2.hatched) {
@@ -49,8 +49,8 @@
 
 </script>
 
-<div class="flex flex-col gap-2 m-2 items-center">
-    <div class="container w-auto">
+<div class="flex flex-col gap-0 m-2 items-center">
+    <div class="container w-auto mb-2">
         {#if (!$hatcher2.hatched)}
         <!-- svelte-ignore a11y-no-static-element-interactions -->
             <!-- svelte-ignore a11y-click-events-have-key-events -->

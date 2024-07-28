@@ -26,6 +26,9 @@
 		{#if $unlocked_tabs.includes("map")}
 			<TabAnchor href="/map" selected={$page.url.pathname === '/map'}>Map</TabAnchor>
 		{/if}
+		{#if $unlocked_tabs.includes("shop")}
+			<TabAnchor href="/shop" selected={$page.url.pathname === '/shop'}>Shop</TabAnchor>
+		{/if}
 		{#if $unlocked_tabs.includes("stats")}
 			<TabAnchor href="/stats" selected={$page.url.pathname === '/stats'}>Stats</TabAnchor>
 		{/if}

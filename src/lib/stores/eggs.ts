@@ -1,6 +1,6 @@
 import { persisted } from 'svelte-persisted-store'
 
-type HatcherInfo = {
+export type HatcherInfo = {
     counter: number,
     hatched: boolean,
     love: number,

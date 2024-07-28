@@ -14,8 +14,8 @@
 		<span><h1 class="h1">Hatch the Egg</h1> </span>
 		
 	{#if $gold_earned > 0}
-	<div class="flex flex-row items-center gap-2">
-		<span>Gold: {$gold_earned - $gold_spent}</span>
+	<div class="flex flex-row items-center gap-3">
+		<span class="flex flex-row gap-1 items-center">{$gold_earned - $gold_spent}<img style="height: 18px;" class="mb-1" src="/assets/Gold Star Piece.png" alt="Gold coin"></span>
 	</div>
 	{/if}
 

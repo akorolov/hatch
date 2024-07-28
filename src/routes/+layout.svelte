@@ -49,7 +49,7 @@
 	}
 
 	function CheckLove() {
-		let threshold = 100000
+		let threshold = 20000
 		let gold = 10
 		for (let egg of hatchers) {
 			if (egg.hatched) {
@@ -62,7 +62,7 @@
 					toastStore.trigger(t)
 				}
 			}
-			threshold += 100000
+			threshold += 20000
 			gold += 10
 		}
 	}
